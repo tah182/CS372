@@ -6,4 +6,4 @@ struct chainNode {
 	chainNode* next;
 };
 
-chainNode* hashTable;
+

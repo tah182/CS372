@@ -1,7 +1,9 @@
 //global constants
 
-//global structs
+//global data types
 struct chainNode {
 	int key;
 	chainNode* next;
 };
+
+chainNode* hashTable;

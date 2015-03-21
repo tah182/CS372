@@ -1,10 +1,11 @@
 //global constants
-const int testInt = 1;
+const int SOURCESIZE = 5000;
 
 //global data structures
 
 //global prototypes
 int getTableSize();
+void fillTable(int[], int&, int);
 
 
 

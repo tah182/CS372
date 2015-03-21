@@ -4,6 +4,7 @@ using namespace std;
 #include "common.h"
 #include <iostream>
 #include <stdlib.h>			//used for rand, srand functions
+#include <time.h>			//used to seed rand
 
 
 //implemented by Eric Valero. 
@@ -20,18 +21,22 @@ int getTableSize() {
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique
 void fillTable(int table[]) {
-	bool isUnique = true;							//used to track uniqueness of target number
+	bool isUnique;							//used to track uniqueness of target number
 	int entries = 0;								//number of entries which have been added to table
 	int target;										//number to attempt to add to table
 	
+	srand(time(NULL));
+	
 	while(entries <= SOURCESIZE) {
-		srand(SEED);
+	
 		target = rand();
+		isUnique = true;
 		
 		//determine if number is unique
-		for(int index = 0; ((index <= entries)&&(isUnique = true)); index++) {
-			if(table[index]==target)
+		for(int index = 0; ((index <= entries)&&(isUnique == true)); index++) {
+			if(table[index] == target) {
 				isUnique = false;
+			}
 		}
 		
 		//if it is unique, add to next space in array and increment entries

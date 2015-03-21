@@ -9,9 +9,6 @@ int main() {
 	
 	int hashSource[SOURCESIZE];
 	fillTable(hashSource);
-	
-	for(int i=0;i<5000;i++)
-		cout << hashSource[i] << endl;
 		
 	return 0;
 }

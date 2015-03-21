@@ -21,12 +21,13 @@ int getTableSize() {
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique
 void fillTable(int table[]) {
-	bool isUnique;							//used to track uniqueness of target number
+	bool isUnique;									//used to track uniqueness of target number
 	int entries = 0;								//number of entries which have been added to table
 	int target;										//number to attempt to add to table
 	
 	srand(time(NULL));
 	
+	//run until array is full
 	while(entries <= SOURCESIZE) {
 	
 		target = rand();

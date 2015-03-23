@@ -9,4 +9,5 @@ struct chainNode{
 
 //prototypes
 chainNode* createChainTable();
+chainNode* getHash(chainNode*, int, int);
 

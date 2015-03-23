@@ -6,9 +6,12 @@
 using namespace std;
 
 int main() {
-	
+	chainNode* test;
 	int hashSource[SOURCESIZE];
 	fillTable(hashSource);
+	test = createChainTable();
+	
+	getHash(test, 1, 10);
 		
 	return 0;
 }

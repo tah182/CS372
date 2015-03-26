@@ -5,6 +5,8 @@
 	<stdlib.h>
 	<time.h>
 
+1427252631 
+
 1426914567 c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\common.h
 
 1427252631 source:c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\valero.cpp
@@ -21,8 +23,12 @@
 	"Valero.h"
 	"Tatsumoto.h"
 
+1427323595 .h"
+
 1427323705 c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\tatsumoto.h
 	<algorithm>
+
+1427323705 >
 
 1427323595 source:c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\tatsumoto.cpp
 	"Tatsumoto.h"
@@ -30,6 +36,34 @@
 1427323720 source:c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\tatsumoto-valero-assn3-prog\test.cpp
 	"../Tatsumoto.h"
 
+1427323720 oto.h"
+
 1427323595 c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\tatsumoto.cpp
 	"Tatsumoto.h"
+
+1426914567 source:/Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/common.cpp
+	"common.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
+1426914567 /Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/common.h
+
+1427252631 source:/Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/Valero.cpp
+	"Valero.h"
+	"common.h"
+	"stddef.h"
+	<iostream>
+
+1427252631 /Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/Valero.h
+
+1427325170 source:/Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/ValeroTatsumoto-Assn3-Prog.cpp
+	<iostream>
+	"common.h"
+	"Valero.h"
+	"Tatsumoto.h"
+
+1427342349 /Users/tah1/OneDrive/School/2015 Spring 2/CS 372/Group Project/Tatsumoto.h
+	<algorithm>
+	<stdlib.h>
 

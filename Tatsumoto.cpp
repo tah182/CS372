@@ -1,4 +1,5 @@
 #include "Tatsumoto.h"
+#include <iostream>
 
 //**************************************************************************
 // FUNCTION:  randInt
@@ -24,9 +25,14 @@ int* makeRandArray() {
     int i = 0;
     for (i = 0; i < maxSize; i++) {
         int val = 0;
+        int unique = 0;
         do {
             val = makeRandInt();
-        } while (std::find(intArray, intArray+5000, val) == intArray+5000);
+            int j = 0;
+            for (j = 0; j <= i; j++)
+                if (val == intArray[j])
+                    unique = 1;
+        } while (unique == 1);
         intArray[i] = val;
     }
     return intArray;
@@ -40,5 +46,6 @@ int* makeRandArray() {
 // CALLS TO:
 //**************************************************************************
  int* allocArray() {
+     return new int(1);
  }
 

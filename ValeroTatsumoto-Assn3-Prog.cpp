@@ -1,6 +1,6 @@
 #include <iostream>
 #include "common.h"
-#include "Valero.h"
+//#include "Valero.h"
 #include "Tatsumoto.h"
 
 using namespace std;

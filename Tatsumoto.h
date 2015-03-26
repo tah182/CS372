@@ -1,5 +1,6 @@
 #include <algorithm> // for std::find
 #include <stdlib.h>
+using namespace std;
 
 // prototypes
 int makeRandInt();

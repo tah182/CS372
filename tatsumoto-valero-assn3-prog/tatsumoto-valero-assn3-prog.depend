@@ -67,3 +67,31 @@
 	<algorithm>
 	<stdlib.h>
 
+1426914567 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.cpp
+	"common.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
+1426914567 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.h
+
+1427252631 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.cpp
+	"Valero.h"
+	"common.h"
+	"stddef.h"
+	<iostream>
+
+1427252631 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.h
+
+1427344276 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/ValeroTatsumoto-Assn3-Prog.cpp
+	<iostream>
+	"common.h"
+	"Tatsumoto.h"
+
+1427344778 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.h
+	<algorithm>
+	<stdlib.h>
+
+1427344307 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.cpp
+	"Tatsumoto.h"
+

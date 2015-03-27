@@ -6,7 +6,7 @@ using namespace std;
 int makeRandInt();
 int* makeRandArray();
 int getHashSize(int arrSize);
-int* linearProbeHash(int tSize);
+int* linearProbeHash(int* intArray);
 int* doubleHash(int tSize);
 int avgSearch(int *intARray, int *hashTable);
 int searchInt(int *hashTable, int num);

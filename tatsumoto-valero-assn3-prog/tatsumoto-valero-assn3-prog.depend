@@ -5,7 +5,7 @@
 	<stdlib.h>
 	<time.h>
 
-1427252631 
+1427408682 
 
 1426914567 c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\common.h
 
@@ -23,7 +23,7 @@
 	"Valero.h"
 	"Tatsumoto.h"
 
-1427323595 .h"
+1427408784 .h"
 
 1427323705 c:\users\tatsumoto.takashi\onedrive\school\2015 spring 2\cs 372\group project\tatsumoto.h
 	<algorithm>
@@ -124,4 +124,28 @@
 	"common.h"
 	"Valero.h"
 	"Tatsumoto.h"
+
+1426914567 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.cpp
+	"common.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
+1426914567 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.h
+
+1427252631 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.cpp
+	"Valero.h"
+	"common.h"
+	"stddef.h"
+	<iostream>
+
+1427252631 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.h
+
+1427421054 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.cpp
+	"Tatsumoto.h"
+	<iostream>
+
+1427421023 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.h
+	<algorithm>
+	<stdlib.h>
 

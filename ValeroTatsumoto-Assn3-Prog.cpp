@@ -22,9 +22,11 @@ int main() {
     cout << "and compare against Knuth averages." << endl << endl;
 
 	hashSize = getHashSize();
-    int* linearHash = linearProbeHash(hashSource, hashSize);
+	int hashTable[hashSize];
+    allocArray(hashTable, hashSize);
+    linearProbeHash(hashTable, hashSource, hashSize);
 
-	test = createChainTable(hashSize);
+//	test = createChainTable(hashSize);
 
 
 	return 0;

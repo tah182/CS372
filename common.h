@@ -8,3 +8,14 @@ int getTableSize();
 void fillTable(int[]);
 int getHashSize();
 
+//**************************************************************************
+// ENUM::     ProbeMethod
+// DESCRIP:   Enum for Probe Emthod
+//**************************************************************************
+enum ProbeMethod {
+    LINEAR_PROBE,
+    DOUBLE_HASH,
+    CHAIN_HASH
+};
+
+float knuthPrediction (ProbeMethod probeMethod, int hashSize);

@@ -10,4 +10,3 @@ struct chainNode{
 //prototypes
 chainNode** createChainTable(int);
 void putHash(chainNode*[], int, int);
-

@@ -1,6 +1,4 @@
-#include "common.h"
 #include "Tatsumoto.h"
-#include <iostream>
 
 //**************************************************************************
 // FUNCTION:  randInt
@@ -20,18 +18,17 @@ int makeRandInt() {
 // OUTPUT:    Return Value: an allocated array
 // CALLS TO:
 //**************************************************************************
- int* allocArray(int arrSize) {
-    int *intArray;
+void allocArray(int hashTable[], int arrSize) {
     try {
-         intArray = new int[arrSize];
+         hashTable = new int[arrSize];
     } catch (bad_alloc& exc) {
         cout << "Cannot allocate array memory. Exiting..." << endl;
         exit(1);
     }
-    return intArray;
  }
 
 //**************************************************************************
+// ------------------         DEPRECATED        ----------------------------
 // FUNCTION:  makeRandArray
 // DESCRIP:   Dynamically allocates 5000 integers with random numbers
 // INPUT:     None
@@ -39,6 +36,7 @@ int makeRandInt() {
 // CALLS TO:  allocArray
 //            makeRandInt
 //**************************************************************************
+/*
 int* makeRandArray() {
     int maxSize = 5000;
     int *intArray = allocArray(maxSize);
@@ -59,7 +57,7 @@ int* makeRandArray() {
     }
     return intArray;
 }
-
+*/
 
 //**************************************************************************
 // FUNCTION:  linearProbeHash
@@ -68,10 +66,8 @@ int* makeRandArray() {
 // OUTPUT:    Creates a Linear
 // CALLS TO:  getHashSize
 //**************************************************************************
-int* linearProbeHash(int intArray[], int hashSize) {
-    int* hashTable = allocArray(hashSize);
-
-    for (int i = 0; i < hashSize; i++) {
+void linearProbeHash(int hashTable[], int intArray[], int hashSize) {
+    for (int i = 0; i < 5000; i++) {
         // if collision, resolve via linear probe.
         int hashLocation = intArray[i] % hashSize;
         while (hashTable[hashLocation] > 0) {
@@ -82,6 +78,6 @@ int* linearProbeHash(int intArray[], int hashSize) {
         }
 
         hashTable[hashLocation] = intArray[i];
-        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
+//        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
     }
 }

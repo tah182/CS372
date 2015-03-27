@@ -13,12 +13,11 @@ int main() {
     cout << "    - separated chain hashing" << endl;
     cout << "and compare against Knuth averages." << endl << endl;
 
-//    int* intArray = makeRandArray();
-
-    int* linearHash = linearProbeHash(intArray);
 	chainNode** test;
 	int hashSource[SOURCESIZE];
 	fillTable(hashSource);
+    int* linearHash = linearProbeHash(hashSource);
+
 	test = createChainTable();
 
 	getHash(test, 1, 8);

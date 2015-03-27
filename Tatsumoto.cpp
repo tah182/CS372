@@ -1,3 +1,4 @@
+#include "common.h"
 #include "Tatsumoto.h"
 #include <iostream>
 
@@ -61,32 +62,6 @@ int* makeRandArray() {
 
 
 //**************************************************************************
-// FUNCTION:  getHashSize
-// DESCRIP:   Asks the user for hash size
-// INPUT:     None
-// OUTPUT:    Return Value: an integer >= 6700
-// CALLS TO:
-//**************************************************************************
- int getHashSize() {
-     string printout = "Please input a size for the Hash Table: ";
-     int input = 0;
-     do {
-        cout << printout;
-        string userInput = "";
-        cin >> userInput;
-        try {
-            input = atoi(userInput.c_str());
-        } catch (exception &e) {
-            input = 0;
-        }
-        if (input < 6700)
-            cout << "Not a valid number, please enter a number greater than 6699." << endl;
-     } while (input < 6700);
-     return input;
- }
-
-
-//**************************************************************************
 // FUNCTION:  linearProbeHash
 // DESCRIP:   Creates a Linear Hash Table based on array passed in
 // INPUT:     intArray - the integer array to put into hash table
@@ -95,4 +70,6 @@ int* makeRandArray() {
 //**************************************************************************
 int* linearProbeHash(int* intArray) {
     int hashSize = getHashSize();
+
+
 }

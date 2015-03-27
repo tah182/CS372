@@ -20,7 +20,7 @@ chainNode** createChainTable() {
 	return chainedTable;
 }
 
-chainNode* getHash(chainNode* hashTable[], int key, int size) {
+chainNode* putHash(chainNode* hashTable[], int key, int size) {
 	chainNode* resolution;				//pointer to storage location	
 	int hashedKey = key % size;			//initial attempt location
 	
@@ -31,7 +31,7 @@ chainNode* getHash(chainNode* hashTable[], int key, int size) {
 		resolution = resolution->next;
 	}
 	
-	cout << resolution;
+	resolution->key = key;
 	return resolution;
 }
 

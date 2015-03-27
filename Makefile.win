@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = common.o Tatsumoto.o Valero.o ValeroTatsumoto-Assn3-Prog.o
-LINKOBJ  = common.o Tatsumoto.o Valero.o ValeroTatsumoto-Assn3-Prog.o
+OBJ      = ValeroTatsumoto-Assn3-Prog.o common.o Tatsumoto.o Valero.o
+LINKOBJ  = ValeroTatsumoto-Assn3-Prog.o common.o Tatsumoto.o Valero.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
@@ -24,6 +24,9 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
+ValeroTatsumoto-Assn3-Prog.o: ValeroTatsumoto-Assn3-Prog.cpp
+	$(CPP) -c ValeroTatsumoto-Assn3-Prog.cpp -o ValeroTatsumoto-Assn3-Prog.o $(CXXFLAGS)
+
 common.o: common.cpp
 	$(CPP) -c common.cpp -o common.o $(CXXFLAGS)
 
@@ -32,6 +35,3 @@ Tatsumoto.o: Tatsumoto.cpp
 
 Valero.o: Valero.cpp
 	$(CPP) -c Valero.cpp -o Valero.o $(CXXFLAGS)
-
-ValeroTatsumoto-Assn3-Prog.o: ValeroTatsumoto-Assn3-Prog.cpp
-	$(CPP) -c ValeroTatsumoto-Assn3-Prog.cpp -o ValeroTatsumoto-Assn3-Prog.o $(CXXFLAGS)

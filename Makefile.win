@@ -1,15 +1,15 @@
-# Project: ValeroTatsumoto_Assn3_Prog
+# Project: GroupProject1
 # Makefile created by Dev-C++ 5.7.1
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = ValeroTatsumoto-Assn3-Prog.o Valero.o Tatsumoto.o common.o
-LINKOBJ  = ValeroTatsumoto-Assn3-Prog.o Valero.o Tatsumoto.o common.o
+OBJ      = ValeroTatsumoto-Assn3-Prog.o common.o Valero.o Tatsumoto.o
+LINKOBJ  = ValeroTatsumoto-Assn3-Prog.o common.o Valero.o Tatsumoto.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
-BIN      = ValeroTatsumoto_Assn3_Prog.exe
+BIN      = GroupProject1.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -27,11 +27,11 @@ $(BIN): $(OBJ)
 ValeroTatsumoto-Assn3-Prog.o: ValeroTatsumoto-Assn3-Prog.cpp
 	$(CPP) -c ValeroTatsumoto-Assn3-Prog.cpp -o ValeroTatsumoto-Assn3-Prog.o $(CXXFLAGS)
 
+common.o: common.cpp
+	$(CPP) -c common.cpp -o common.o $(CXXFLAGS)
+
 Valero.o: Valero.cpp
 	$(CPP) -c Valero.cpp -o Valero.o $(CXXFLAGS)
 
 Tatsumoto.o: Tatsumoto.cpp
 	$(CPP) -c Tatsumoto.cpp -o Tatsumoto.o $(CXXFLAGS)
-
-common.o: common.cpp
-	$(CPP) -c common.cpp -o common.o $(CXXFLAGS)

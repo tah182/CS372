@@ -68,8 +68,6 @@ int* makeRandArray() {
 // OUTPUT:    Creates a Linear
 // CALLS TO:  getHashSize
 //**************************************************************************
-int* linearProbeHash(int* intArray) {
-    int hashSize = getHashSize();
-
-
+int* linearProbeHash(int* intArray, int hashSize) {
+    cout << hashSize << endl;
 }

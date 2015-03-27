@@ -6,6 +6,5 @@ const int SOURCESIZE = 5000;
 //global prototypes
 int getTableSize();
 void fillTable(int[]);
-
-
+int getHashSize();
 

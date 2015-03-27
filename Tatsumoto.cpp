@@ -68,6 +68,20 @@ int* makeRandArray() {
 // OUTPUT:    Creates a Linear
 // CALLS TO:  getHashSize
 //**************************************************************************
-int* linearProbeHash(int* intArray, int hashSize) {
+int* linearProbeHash(int intArray[], int hashSize) {
     int* hashTable = allocArray(hashSize);
+
+    for (int i = 0; i < hashSize; i++) {
+        // if collision, resolve via linear probe.
+        int hashLocation = intArray[i] % hashSize;
+        while (hashTable[hashLocation] > 0) {
+            hashLocation++;
+            if (hashLocation >= hashSize)
+                hashLocation = 0;
+            cout << "Collision at location: " << hashLocation - 1 << endl;
+        }
+
+        hashTable[hashLocation] = intArray[i];
+        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
+    }
 }

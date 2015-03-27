@@ -7,11 +7,12 @@ using namespace std;
 
 int main() {
 	chainNode** test;
+	chainNode* location;
 	int hashSource[SOURCESIZE];
 	fillTable(hashSource);
 	test = createChainTable();
 	
-	getHash(test, 1, 8);
+	location = getHash(test, 1, 8);
 		
 	return 0;
 }

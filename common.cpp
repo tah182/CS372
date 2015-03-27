@@ -18,7 +18,7 @@ void fillTable(int table[]) {
 	//run until array is full
 	while(entries <= SOURCESIZE) {
 
-		target = rand();
+		target = (rand() % 30000) + 1;					//get rid of this constant
 		isUnique = true;
 
 		//determine if number is unique

@@ -13,11 +13,8 @@ int main() {
     cout << "    - double hashing" << endl;
     cout << "    - separated chain hashing" << endl;
     cout << "and compare against Knuth averages." << endl << endl;
-<<<<<<< HEAD
-=======
 
 //    int* intArray = makeRandArray();
->>>>>>> b75252c5316f772d477d174360b2177fb0f2e7fb
 
 	chainNode** test;
 	int hashSource[SOURCESIZE];

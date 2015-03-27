@@ -8,6 +8,6 @@ struct chainNode{
 };
 
 //prototypes
-chainNode** createChainTable();
-chainNode* putHash(chainNode*[], int, int);
+chainNode** createChainTable(int);
+void putHash(chainNode*[], int, int);
 

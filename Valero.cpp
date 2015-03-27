@@ -6,32 +6,28 @@
 using namespace std;
 //local variables
 
-chainNode** createChainTable() {
-	int n = getTableSize();
+chainNode** createChainTable(int hashSize) {
+	int n = hashSize;
 	chainNode** chainedTable = new chainNode*[n];
 	chainNode* initializer;
 	for (int i = 0; i < n; i++) {
 		chainedTable[i] = new chainNode;
 		chainedTable[i]->next = NULL;
-		cout << "ChainedTable[" << i << "] = " << chainedTable[i];
-		cout << endl << "->next = " << chainedTable[i]->next << endl;
 	}
-	cout << "Created";
+
 	return chainedTable;
 }
 
-chainNode* putHash(chainNode* hashTable[], int key, int size) {
+void putHash(chainNode* hashTable[], int key, int size) {
 	chainNode* resolution;				//pointer to storage location	
 	int hashedKey = key % size;			//initial attempt location
 	
-	cout << "attempting to resolve";
 	resolution = hashTable[hashedKey];
-	cout << "going to enter loop";
 	while(resolution->next != NULL) {
 		resolution = resolution->next;
 	}
 	
 	resolution->key = key;
-	return resolution;
+	return;
 }
 

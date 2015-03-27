@@ -6,18 +6,6 @@ using namespace std;
 #include <stdlib.h>			//used for rand, srand functions
 #include <time.h>			//used to seed rand
 
-
-//implemented by Eric Valero.
-//Gets the table size from user for declaring hash tables of dynamic size
-int getTableSize() {
-	int n;
-	cout << "Enter a desired table size: ";
-	cin >> n;
-	cout << endl;
-
-	return n;
-}
-
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique
 void fillTable(int table[]) {

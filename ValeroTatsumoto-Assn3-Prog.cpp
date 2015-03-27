@@ -6,14 +6,22 @@
 using namespace std;
 
 int main() {
-    int* intArray = makeRandArray();
+    cout << "*****Tatsumoto-Valero-assn3-prog*****" << endl;
+    cout << "This program will assess statistics behind:" << endl;
+    cout << "    - linear probe hashing" << endl;
+    cout << "    - double hashing" << endl;
+    cout << "    - separated chain hashing" << endl;
+    cout << "and compare against Knuth averages." << endl << endl;
 
-//	chainNode** test;
-//	int hashSource[SOURCESIZE];
-//	fillTable(hashSource);
-//	test = createChainTable();
+//    int* intArray = makeRandArray();
 
-//	getHash(test, 1, 8);
+    int* linearHash = linearProbeHash(intArray);
+	chainNode** test;
+	int hashSource[SOURCESIZE];
+	fillTable(hashSource);
+	test = createChainTable();
+
+	getHash(test, 1, 8);
 
 	return 0;
 }

@@ -15,7 +15,7 @@ int makeRandInt() {
 //**************************************************************************
 // FUNCTION:  allocArray
 // DESCRIP:   Allocates array. Exits if cannot allocate.
-// INPUT:     None
+// INPUT:     arrSize - the size of the array to allocate
 // OUTPUT:    Return Value: an allocated array
 // CALLS TO:
 //**************************************************************************
@@ -27,7 +27,6 @@ int makeRandInt() {
         cout << "Cannot allocate array memory. Exiting..." << endl;
         exit(1);
     }
-    cout << "pt1" << endl;
     return intArray;
  }
 
@@ -36,7 +35,8 @@ int makeRandInt() {
 // DESCRIP:   Dynamically allocates 5000 integers with random numbers
 // INPUT:     None
 // OUTPUT:    Return Value: a pointer to array object of size 5,000
-// CALLS TO:
+// CALLS TO:  allocArray
+//            makeRandInt
 //**************************************************************************
 int* makeRandArray() {
     int maxSize = 5000;
@@ -60,7 +60,7 @@ int* makeRandArray() {
 }
 
 
- //**************************************************************************
+//**************************************************************************
 // FUNCTION:  getHashSize
 // DESCRIP:   Asks the user for hash size
 // INPUT:     None
@@ -84,3 +84,15 @@ int* makeRandArray() {
      } while (input < 6700);
      return input;
  }
+
+
+//**************************************************************************
+// FUNCTION:  linearProbeHash
+// DESCRIP:   Creates a Linear Hash Table based on array passed in
+// INPUT:     intArray - the integer array to put into hash table
+// OUTPUT:    Creates a Linear
+// CALLS TO:  getHashSize
+//**************************************************************************
+int* linearProbeHash(int* intArray) {
+    int hashSize = getHashSize();
+}

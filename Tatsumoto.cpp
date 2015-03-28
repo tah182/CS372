@@ -60,11 +60,13 @@ int* makeRandArray() {
 */
 
 //**************************************************************************
-// FUNCTION:  linearProbeHash
-// DESCRIP:   Creates a Linear Hash Table based on array passed in
-// INPUT:     intArray - the integer array to put into hash table
-// OUTPUT:    Creates a Linear
-// CALLS TO:  getHashSize
+// FUNCTION:    linearProbeHash
+// DESCRIP:     Creates a Linear Hash Table based on array passed in
+// INPUT:       hashTable - the reference to the hashTable to create
+//              intArray - the integer array to put into hash table
+//              hashSize - the size of the hash table
+// OUTPUT:      None
+// CALLS TO:
 //**************************************************************************
 void linearProbeHash(int hashTable[], int intArray[], int hashSize) {
     for (int i = 0; i < 5000; i++) {
@@ -75,6 +77,28 @@ void linearProbeHash(int hashTable[], int intArray[], int hashSize) {
             if (hashLocation >= hashSize)
                 hashLocation = 0;
             //cout << "Collision at location: " << hashLocation - 1 << endl;
+        }
+
+        hashTable[hashLocation] = intArray[i];
+//        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
+    }
+}
+
+//**************************************************************************
+// FUNCTION:  doubleHash
+// INPUT:       hashTable - the reference to the hashTable to create
+//              intArray - the integer array to put into hash table
+//              hashSize - the size of the hash table
+// OUTPUT:    Creates a Linear
+// CALLS TO:  getHashSize
+//**************************************************************************
+void doubleHash(int hashTable[], int intArray[], int hashSize) {
+    for (int i = 0; i < 5000; i++) {
+        // if collision, resolve via linear probe.
+        int hashLocation = intArray[i] % hashSize;
+        while (hashTable[hashLocation] > 0) {
+            int newLocation = (intArray[i] % (hashSize - 2)) + 1;
+            hashLocation = (newLocation + hashLocation) % hashSize;
         }
 
         hashTable[hashLocation] = intArray[i];

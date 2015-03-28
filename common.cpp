@@ -61,7 +61,14 @@ void fillTable(int table[]) {
      } while (input < 6700);
      return input;
  }
- 
+
+//**************************************************************************
+// FUNCTION:  displayIntro
+// DESCRIP:   Displays the application introduction message
+// INPUT:     None
+// OUTPUT:    None
+// CALLS TO:
+//**************************************************************************
  void displayIntro() {
  	cout << "*****Tatsumoto-Valero-assn3-prog*****" << endl;
     cout << "This program will assess statistics behind:" << endl;
@@ -69,6 +76,61 @@ void fillTable(int table[]) {
     cout << "    - double hashing" << endl;
     cout << "    - separated chain hashing" << endl;
     cout << "and compare against Knuth averages." << endl << endl;
-    
+
     return;
+ }
+
+  //**************************************************************************
+// FUNCTION:  searchInt
+// DESCRIP:   Searches the hash table and calculates how many passes it made to find the number
+// INPUT:     hashTable - the hash Table array to search in
+//            hashSize - the size of the hash Table
+//            num - the number to find
+//            probeMethod - the ProbeMethod Enum
+// OUTPUT:    int the passes needed to find the number
+// CALLS TO:
+//**************************************************************************
+ int searchInt(int hashTable[], int hashSize, int num, ProbeMethod probeMethod) {
+     int passes = 0;
+     int hashLocation;
+     switch (probeMethod) {
+        case LINEAR_PROBE:
+            hashLocation = num % hashSize;
+            while (hashTable[hashLocation] != num) {
+                hashLocation++;
+                passes++;
+            }
+            passes++;
+            break;
+        case DOUBLE_HASH:
+            hashLocation = num % hashSize;
+            while (hashTable[hashLocation] != num) {
+                int newLocation = (num % (hashSize - 2)) + 1;
+                hashLocation = (newLocation + hashLocation) % hashSize;
+            }
+            passes++;
+            break;
+        default :
+            passes = 0;
+     }
+     return passes;
+ }
+
+
+ //**************************************************************************
+// FUNCTION:  avgSearch
+// DESCRIP:   the average search it took to find each number
+// INPUT:     intArray - the integer array to search numbers from
+//            hashTable - the hash Table array to search in
+//            hashSize - the size of the hash Table
+//            probeMethod - the ProbeMethod Enum
+// OUTPUT:    float - the average searches it took to find the integers
+// CALLS TO:  searchInt
+//**************************************************************************
+ float avgSearch(int intArray[], int hashTable[], int hashSize, ProbeMethod probeMethod) {
+ 	int searchesTook = 0;
+ 	for (int i = 0; i < SOURCESIZE / 2; i += 2)
+        searchesTook += searchInt(hashTable, hashSize, hashTable[i], probeMethod);
+
+ 	return searchesTook * 1.0 / (SOURCESIZE / 2);
  }

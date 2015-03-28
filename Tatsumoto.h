@@ -12,6 +12,4 @@ using namespace std;
 
 void allocArray(int hashTable[], int arrSize);
 void linearProbeHash(int hashTable[], int intArray[], int hashSize);
-int* doubleHash(int tSize);
-int avgSearch(int *intARray, int *hashTable);
-int searchInt(int *hashTable, int num);
+void doubleHash(int hashTable[], int intArray[], int hashSize);

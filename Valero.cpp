@@ -4,12 +4,10 @@
 #include <iostream>			
 
 using namespace std;
-//local variables
 
 chainNode** createChainTable(int hashSize) {
 	int n = hashSize;
 	chainNode** chainedTable = new chainNode*[n];
-	chainNode* initializer;
 	
 	for (int i = 0; i < n; i++) {
 		chainedTable[i] = new chainNode;

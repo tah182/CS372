@@ -34,14 +34,17 @@ int main() {
 
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray)
-    	//doubleHash(doubleHashArray, hashSource, hashSize);
-    	cout << "skipped double";
+    	doubleHash(doubleHashArray, hashSource, hashSize);
     else
     	cout << "Error- out of heap memory" << endl;
 
-	linkedChainHash = createChainTable(hashSize);
-	fillChainedTable(linkedChainHash, hashSource, hashSize);
-	schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
+    doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
+
+    // RUns if you
+	//linkedChainHash = createChainTable(hashSize);
+	//fillChainedTable(linkedChainHash, hashSource, hashSize);
+	//schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
 	cout << chainedSearch;
 
 

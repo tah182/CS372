@@ -11,19 +11,25 @@ int main() {
 //variables
 	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
+	allocArray(hashSource, SOURCESIZE);
+
 	int hashSize;
-	int* linearHash;
 	double chainedSearch,
 		   linearSearch,
 		   doubleSearch;
 
     displayIntro();
-	
+
 	fillTable(hashSource);
 	hashSize = getHashSize();
-	
-	linearHash = new int[hashSize];
-    linearProbeHash(linearHash, hashSource, hashSize);
+
+	int linearHash[SOURCESIZE];
+	allocArray(linearHash, hashSize);
+    linearProbeHash(hashSource, linearHash, hashSize);
+
+    int doubleHashArray[SOURCESIZE];
+    allocArray(doubleHashArray, hashSize);
+    doubleHash(hashSource, doubleHashArray, hashSize);
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);

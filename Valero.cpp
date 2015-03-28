@@ -95,7 +95,7 @@ double searchChainedTable(chainNode* hashTable[], int sourceArr[], int size) {
 		
 		if (location->key != target) {
 
-			while((location->key != target) && (location->next != NULL)) {
+			while(location->key != target) {
 				location = location->next;
 				steps++;
 			}

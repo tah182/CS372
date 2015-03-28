@@ -33,16 +33,18 @@ int main() {
     	cout << "Error- out of heap memory" << endl;
 
     int* doubleHashArray = new (nothrow) int[hashSize];
-    if (doubleHashArray)
-    	//doubleHash(doubleHashArray, hashSource, hashSize);
+    if (doubleHashArray) {
+    
+    	doubleHash(doubleHashArray, hashSource, hashSize);
     	cout << "skipped double";
+    }
     else
     	cout << "Error- out of heap memory" << endl;
 
-	linkedChainHash = createChainTable(hashSize);
-	fillChainedTable(linkedChainHash, hashSource, hashSize);
-	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-	cout << chainedSearch;
+	//linkedChainHash = createChainTable(hashSize);
+	//fillChainedTable(linkedChainHash, hashSource, hashSize);
+	//chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	//cout << chainedSearch;
 
 
 	return 0;

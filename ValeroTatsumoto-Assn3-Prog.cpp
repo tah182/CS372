@@ -11,7 +11,9 @@ int main() {
 //variables
 	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
-	allocArray(hashSource, SOURCESIZE);
+	//when you pass this hashSource, you are passing the 
+	//fixed source array for dynamic allocation. 
+							//allocArray(hashSource, SOURCESIZE);
 
 	int hashSize;
 	double chainedSearch,
@@ -19,17 +21,18 @@ int main() {
 		   doubleSearch;
 
     displayIntro();
-
+	
+	//all code should come after this point since this is where the source array gets filled with random numbers
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
-	int linearHash[SOURCESIZE];
-	allocArray(linearHash, hashSize);
-    linearProbeHash(hashSource, linearHash, hashSize);
+	//int linearHash[SOURCESIZE];
+	//allocArray(linearHash, hashSize);
+    //linearProbeHash(hashSource, linearHash, hashSize);
 
-    int doubleHashArray[SOURCESIZE];
-    allocArray(doubleHashArray, hashSize);
-    doubleHash(hashSource, doubleHashArray, hashSize);
+    //int doubleHashArray[SOURCESIZE];
+    //allocArray(doubleHashArray, hashSize);
+    //doubleHash(hashSource, doubleHashArray, hashSize);
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);

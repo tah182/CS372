@@ -74,7 +74,7 @@ void linearProbeHash(int hashTable[], int intArray[], int hashSize) {
             hashLocation++;
             if (hashLocation >= hashSize)
                 hashLocation = 0;
-            cout << "Collision at location: " << hashLocation - 1 << endl;
+            //cout << "Collision at location: " << hashLocation - 1 << endl;
         }
 
         hashTable[hashLocation] = intArray[i];

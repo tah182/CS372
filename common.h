@@ -7,6 +7,7 @@ const int SOURCESIZE = 5000;
 int getTableSize();
 void fillTable(int[]);
 int getHashSize();
+void displayIntro();
 
 //**************************************************************************
 // ENUM::     ProbeMethod

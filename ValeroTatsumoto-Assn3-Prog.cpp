@@ -9,24 +9,19 @@ using namespace std;
 
 int main() {
 //variables
-	chainNode** test;
+	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
 	fillTable(hashSource);
 	int hashSize;
+	int* linearHash;
 
-    cout << "*****Tatsumoto-Valero-assn3-prog*****" << endl;
-    cout << "This program will assess statistics behind:" << endl;
-    cout << "    - linear probe hashing" << endl;
-    cout << "    - double hashing" << endl;
-    cout << "    - separated chain hashing" << endl;
-    cout << "and compare against Knuth averages." << endl << endl;
+    displayIntro();
 
 	hashSize = getHashSize();
-	int hashTable[hashSize];
-    allocArray(hashTable, hashSize);
-    linearProbeHash(hashTable, hashSource, hashSize);
+    //linearProbeHash(hashSource, linearHash, hashSize);
 
-//	test = createChainTable(hashSize);
+	linkedChainHash = createChainTable(hashSize);
+	fillChainedTable(linkedChainHash, hashSource, hashSize);
 
 
 	return 0;

@@ -27,6 +27,7 @@ int main() {
 	hashSize = getHashSize();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//int linearHash[SOURCESIZE];
 	//allocArray(linearHash, hashSize);
     //linearProbeHash(hashSource, linearHash, hashSize);
@@ -35,6 +36,8 @@ int main() {
     //allocArray(doubleHashArray, hashSize);
     //doubleHash(hashSource, doubleHashArray, hashSize);
 =======
+=======
+>>>>>>> b97cf7e83c446afaea6224a7cb5403d036f38612
 	int linearHash[hashSize];
 	allocArray(linearHash, hashSize);
     linearProbeHash(hashSource, linearHash, hashSize);

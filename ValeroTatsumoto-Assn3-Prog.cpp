@@ -34,7 +34,8 @@ int main() {
 
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray)
-    	doubleHash(doubleHashArray, hashSource, hashSize);
+    	//doubleHash(doubleHashArray, hashSource, hashSize);
+    	cout << "skipped double";
     else
     	cout << "Error- out of heap memory" << endl;
 

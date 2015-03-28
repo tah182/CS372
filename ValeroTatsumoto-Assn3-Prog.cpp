@@ -22,7 +22,8 @@ int main() {
 	fillTable(hashSource);
 	hashSize = getHashSize();
 	
-    //linearProbeHash(hashSource, linearHash, hashSize);
+	linearHash = new int[hashSize];
+    linearProbeHash(linearHash, hashSource, hashSize);
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);

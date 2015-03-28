@@ -11,8 +11,8 @@ int main() {
 //variables
 	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
-	//when you pass this hashSource, you are passing the
-	//fixed source array for dynamic allocation.
+	//when you pass this hashSource, you are passing the 
+	//fixed source array for dynamic allocation. 
 							//allocArray(hashSource, SOURCESIZE);
 
 	int hashSize;
@@ -21,7 +21,7 @@ int main() {
 		   doubleSearch;
 
     displayIntro();
-
+	
 	//all code should come after this point since this is where the source array gets filled with random numbers
 	fillTable(hashSource);
 	hashSize = getHashSize();
@@ -40,7 +40,7 @@ int main() {
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);
-	schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
 	cout << chainedSearch;
 
 

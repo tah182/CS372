@@ -26,21 +26,17 @@ int main() {
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
-	int* linearHash = new (nothrow) int[hashSize];
-	if (linearHash)
-    	linearProbeHash(linearHash, hashSource, hashSize);
-    else
-    	cout << "Error- out of heap memory" << endl;
+	int linearHash[hashSize];
+	allocArray(linearHash, hashSize);
+    linearProbeHash(hashSource, linearHash, hashSize);
 
-    int* doubleHashArray = new (nothrow) int[hashSize];
-    if (doubleHashArray)
-    	doubleHash(doubleHashArray, hashSource, hashSize);
-    else
-    	cout << "Error- out of heap memory" << endl;
+    int doubleHashArray[hashSize];
+    allocArray(doubleHashArray, hashSize);
+    doubleHash(hashSource, doubleHashArray, hashSize);
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);
-	schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
 	cout << chainedSearch;
 
 

@@ -26,6 +26,15 @@ int main() {
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
+<<<<<<< HEAD
+	int linearHash[hashSize];
+	allocArray(linearHash, hashSize);
+    linearProbeHash(hashSource, linearHash, hashSize);
+
+    int doubleHashArray[hashSize];
+    allocArray(doubleHashArray, hashSize);
+    doubleHash(hashSource, doubleHashArray, hashSize);
+=======
 	int* linearHash = new (nothrow) int[hashSize];
 	if (linearHash)
     	linearProbeHash(linearHash, hashSource, hashSize);
@@ -33,34 +42,16 @@ int main() {
     	cout << "Error- out of heap memory" << endl;
 
     int* doubleHashArray = new (nothrow) int[hashSize];
-<<<<<<< HEAD
-    if (doubleHashArray) {
-    
-    	doubleHash(doubleHashArray, hashSource, hashSize);
-    	cout << "skipped double";
-    }
-    else
-    	cout << "Error- out of heap memory" << endl;
-
-	//linkedChainHash = createChainTable(hashSize);
-	//fillChainedTable(linkedChainHash, hashSource, hashSize);
-	//chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-	//cout << chainedSearch;
-=======
     if (doubleHashArray)
     	doubleHash(doubleHashArray, hashSource, hashSize);
     else
     	cout << "Error- out of heap memory" << endl;
+>>>>>>> 4d831bf26ed939c75161ad4346f4b636ddb666bf
 
-    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
-    doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
-
-    // RUns if you
-	//linkedChainHash = createChainTable(hashSize);
-	//fillChainedTable(linkedChainHash, hashSource, hashSize);
-	//schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	linkedChainHash = createChainTable(hashSize);
+	fillChainedTable(linkedChainHash, hashSource, hashSize);
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
 	cout << chainedSearch;
->>>>>>> 4d749ae0f8176d3c9b6d36eaed8b205a6e26bf67
 
 
 	return 0;

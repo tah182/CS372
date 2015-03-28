@@ -26,6 +26,7 @@ int main() {
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
+<<<<<<< HEAD
 	//int linearHash[SOURCESIZE];
 	//allocArray(linearHash, hashSize);
     //linearProbeHash(hashSource, linearHash, hashSize);
@@ -33,6 +34,15 @@ int main() {
     //int doubleHashArray[SOURCESIZE];
     //allocArray(doubleHashArray, hashSize);
     //doubleHash(hashSource, doubleHashArray, hashSize);
+=======
+	int linearHash[hashSize];
+	allocArray(linearHash, hashSize);
+    linearProbeHash(hashSource, linearHash, hashSize);
+
+    int doubleHashArray[hashSize];
+    allocArray(doubleHashArray, hashSize);
+    doubleHash(hashSource, doubleHashArray, hashSize);
+>>>>>>> b97cf7e83c446afaea6224a7cb5403d036f38612
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);

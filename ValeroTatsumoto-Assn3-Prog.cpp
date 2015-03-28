@@ -23,11 +23,11 @@ int main() {
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
-	int linearHash[SOURCESIZE];
+	int linearHash[hashSize];
 	allocArray(linearHash, hashSize);
     linearProbeHash(hashSource, linearHash, hashSize);
 
-    int doubleHashArray[SOURCESIZE];
+    int doubleHashArray[hashSize];
     allocArray(doubleHashArray, hashSize);
     doubleHash(hashSource, doubleHashArray, hashSize);
 

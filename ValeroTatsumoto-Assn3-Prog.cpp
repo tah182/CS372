@@ -35,7 +35,7 @@ int main() {
     int* doubleHashArray = new (nothrow) int[hashSize];
 <<<<<<< HEAD
     if (doubleHashArray) {
-    
+
     	doubleHash(doubleHashArray, hashSource, hashSize);
     	cout << "skipped double";
     }

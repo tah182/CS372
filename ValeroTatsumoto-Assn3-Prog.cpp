@@ -34,8 +34,8 @@ int main() {
 
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray) {
-    
-    	//doubleHash(doubleHashArray, hashSource, hashSize);
+
+    	doubleHash(doubleHashArray, hashSource, hashSize);
     	cout << "skipped double";
     }
     else
@@ -47,7 +47,7 @@ int main() {
 	cout << chainedSearch;
 
 
-    //linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
+    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
     //doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
 
     // RUns if you

@@ -33,34 +33,28 @@ int main() {
     	cout << "Error- out of heap memory" << endl;
 
     int* doubleHashArray = new (nothrow) int[hashSize];
-<<<<<<< HEAD
     if (doubleHashArray) {
-
-    	doubleHash(doubleHashArray, hashSource, hashSize);
+    
+    	//doubleHash(doubleHashArray, hashSource, hashSize);
     	cout << "skipped double";
     }
     else
     	cout << "Error- out of heap memory" << endl;
 
-	//linkedChainHash = createChainTable(hashSize);
-	//fillChainedTable(linkedChainHash, hashSource, hashSize);
-	//chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-	//cout << chainedSearch;
-=======
-    if (doubleHashArray)
-    	doubleHash(doubleHashArray, hashSource, hashSize);
-    else
-    	cout << "Error- out of heap memory" << endl;
+	linkedChainHash = createChainTable(hashSize);
+	fillChainedTable(linkedChainHash, hashSource, hashSize);
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	cout << chainedSearch;
 
-    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
-    doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
+
+    //linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
+    //doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
 
     // RUns if you
 	//linkedChainHash = createChainTable(hashSize);
 	//fillChainedTable(linkedChainHash, hashSource, hashSize);
 	//schainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-	cout << chainedSearch;
->>>>>>> 4d749ae0f8176d3c9b6d36eaed8b205a6e26bf67
+	//cout << chainedSearch;
 
 
 	return 0;

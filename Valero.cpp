@@ -44,7 +44,7 @@ void putHash(chainNode* hashTable[], int key, int size) {
 		resolution->key = key;
 		resolution->next = new (nothrow) chainNode;
 		resolution = resolution->next;
-		//if node creation was succesfull, save key to node
+		
 		if(resolution) {
 			resolution->next = NULL;
 		}

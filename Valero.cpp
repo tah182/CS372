@@ -10,9 +10,11 @@ chainNode** createChainTable(int hashSize) {
 	int n = hashSize;
 	chainNode** chainedTable = new chainNode*[n];
 	chainNode* initializer;
+	
 	for (int i = 0; i < n; i++) {
 		chainedTable[i] = new chainNode;
 		chainedTable[i]->next = NULL;
+		chainedTable[i]->key = 0;
 	}
 
 	return chainedTable;
@@ -26,9 +28,13 @@ void putHash(chainNode* hashTable[], int key, int size) {
 	resolution = hashTable[hashedKey];
 	
 	//if first link in chain is empty, add key to that location
-	if (resolution == NULL) {
+	if (resolution->key == 0) {
 		resolution->key = key;
-		resolution->next = NULL;
+		resolution->next = new (nothrow) chainNode;
+		if (!resolution->next)
+			cout << endl << "ERROR- out of heap memory";
+		else 
+			resolution->next->next = NULL;	
 	}
 	//else find the end of the chain and append a new node
 	else {
@@ -37,10 +43,11 @@ void putHash(chainNode* hashTable[], int key, int size) {
 			resolution = resolution->next;
 		}
 		//dynamically allocate new node
+		resolution->key = key;
 		resolution->next = new (nothrow) chainNode;
+		resolution = resolution->next;
 		//if node creation was succesfull, save key to node
 		if(resolution) {
-			resolution->key = key;
 			resolution->next = NULL;
 		}
 		//else issue error
@@ -48,6 +55,7 @@ void putHash(chainNode* hashTable[], int key, int size) {
 			cout << "Error, not enough memory for chain allocation for key " 
 			<< key << endl;
 		}
+		
 	}
 		
 	return;
@@ -67,3 +75,36 @@ void fillChainedTable(chainNode* hashTable[], int sourceArr[], int size){
 	return;
 }
 
+//searches every other value within the hash source table in the hash, 
+//finds average number of steps to find value
+double searchChainedTable(chainNode* hashTable[], int sourceArr[], int size) {
+
+	double averageSteps;
+	int target;
+	int hashedKey;
+	chainNode* location;
+	int index = 0; 
+	double	steps,
+			runs = 0.0;
+	
+	while(index < SOURCESIZE) {
+		target = sourceArr[index];
+		hashedKey = target % size;
+		location = hashTable[hashedKey];
+		steps++;
+		
+		if (location->key != target) {
+
+			while((location->key != target) && (location->next != NULL)) {
+				location = location->next;
+				steps++;
+			}
+		}
+		runs++;
+		index += 2;
+	}
+	
+	averageSteps = steps / runs;
+	
+	return averageSteps;
+}

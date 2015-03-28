@@ -11,3 +11,4 @@ struct chainNode{
 chainNode** createChainTable(int);
 void putHash(chainNode*[], int, int);
 void fillChainedTable(chainNode*[], int[], int);
+double searchChainedTable(chainNode*[], int[], int);

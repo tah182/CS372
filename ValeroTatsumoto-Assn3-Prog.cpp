@@ -11,17 +11,23 @@ int main() {
 //variables
 	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
-	fillTable(hashSource);
 	int hashSize;
 	int* linearHash;
+	double chainedSearch,
+		   linearSearch,
+		   doubleSearch;
 
     displayIntro();
-
+	
+	fillTable(hashSource);
 	hashSize = getHashSize();
+	
     //linearProbeHash(hashSource, linearHash, hashSize);
 
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
+	cout << chainedSearch;
 
 
 	return 0;

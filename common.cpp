@@ -1,11 +1,10 @@
 //contains functions which must be available to all cpp files
+
+using namespace std;
 #include "common.h"
 #include <iostream>
 #include <stdlib.h>			//used for rand, srand functions
 #include <time.h>			//used to seed rand
-#include <math.h>
-
-using namespace std;
 
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique
@@ -62,25 +61,14 @@ void fillTable(int table[]) {
      } while (input < 6700);
      return input;
  }
-
- //**************************************************************************
-// FUNCTION:  knuthPrediction
-// DESCRIP:   Calculates Knuth's prediction of hash search
-// INPUT:     probeMethod - the ProbeMethod enum
-// OUTPUT:    the Knuth average search prediction
-//**************************************************************************
-float knuthPrediction(ProbeMethod probeMethod, int hashSize) {
-    float loadFactor = SOURCESIZE * 1.0 / hashSize;
-    switch (probeMethod) {
-        case LINEAR_PROBE:
-            return 1/2 * (1 + (1 / (1 - loadFactor)));
-        case DOUBLE_HASH:
-            return (-1 * log(1 - loadFactor)) / loadFactor;
-        case CHAIN_HASH:
-            return 1 + (loadFactor / 2);
-        default:
-            return 1;
-    }
-    cout << "Error in Knuth Prediction... Exiting..." << endl;
-    exit(1);
-}
+ 
+ void displayIntro() {
+ 	cout << "*****Tatsumoto-Valero-assn3-prog*****" << endl;
+    cout << "This program will assess statistics behind:" << endl;
+    cout << "    - linear probe hashing" << endl;
+    cout << "    - double hashing" << endl;
+    cout << "    - separated chain hashing" << endl;
+    cout << "and compare against Knuth averages." << endl << endl;
+    
+    return;
+ }

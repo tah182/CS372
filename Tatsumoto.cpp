@@ -1,4 +1,5 @@
 #include "Tatsumoto.h"
+#include "common.h"
 
 //**************************************************************************
 // FUNCTION:  randInt
@@ -103,4 +104,32 @@ void doubleHash(int hashTable[], int intArray[], int hashSize) {
         hashTable[hashLocation] = intArray[i];
 //        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
     }
+}
+
+
+//**************************************************************************
+// FUNCTION:  printOutResult
+// INPUT:       linearProbeResult - the result of the linear probe
+//              doubleHashResult - the result of the double hash
+//              chainHashResult - the result of the chain hash
+//              hashSize - the hash table size
+// OUTPUT:
+// CALLS TO:  knuthPrediction
+//**************************************************************************
+void printOutResult(int linearProbeResult, int doubleHashResult, int chainHashResult, int hashSize) {
+    cout << endl << endl << SOURCESIZE << " items loaded into a " << hashSize << " element hash table." << endl;
+    cout << "Load Factor = " << SOURCESIZE * 1.0 / hashSize << endl << endl;
+    cout << "Result of searching for 2500 items:" << endl << endl;
+    cout << "\tLinear Probing" << endl;
+    cout << "\t\t" << linearProbeResult << " items examined (avg = " << linearProbeResult * 1.0 / (SOURCESIZE / 2);
+    cout <<             " items examined per search)" << endl;
+    cout << "\t\t" << "  vs Knuth predicted avg = " << knuthPrediction(LINEAR_PROBE, hashSize) << " items examined per search." << endl << endl;
+    cout << "\tDouble Hashing" << endl;
+    cout << "\t\t" << doubleHashResult << " items examined (avg = " << doubleHashResult * 1.0 / (SOURCESIZE / 2);
+    cout <<             " items examined per search)" << endl;
+    cout << "\t\t" << "  vs Knuth predicted avg = " << knuthPrediction(DOUBLE_HASH, hashSize) << " items examined per search." << endl << endl;
+    cout << "\tChained Hashing" << endl;
+    cout << "\t\t" << chainHashResult << " items examined (avg = " << doubleHashResult * 1.0 / (SOURCESIZE / 2);
+    cout <<             " items examined per search)" << endl;
+    cout << "\t\t" << "  vs Knuth predicted avg = " << knuthPrediction(CHAIN_HASH, hashSize) << " items examined per search." << endl;
 }

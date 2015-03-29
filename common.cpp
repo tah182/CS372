@@ -5,6 +5,7 @@ using namespace std;
 #include <iostream>
 #include <stdlib.h>			//used for rand, srand functions
 #include <time.h>			//used to seed rand
+#include <math.h>
 
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique
@@ -79,8 +80,7 @@ void fillTable(int table[]) {
 
     return;
  }
-
-  //**************************************************************************
+//**************************************************************************
 // FUNCTION:  searchInt
 // DESCRIP:   Searches the hash table and calculates how many passes it made to find the number
 // INPUT:     hashTable - the hash Table array to search in
@@ -92,21 +92,21 @@ void fillTable(int table[]) {
 //**************************************************************************
  int searchInt(int hashTable[], int hashSize, int num, ProbeMethod probeMethod) {
      int passes = 0;
-     int hashLocation;
+     int hashLocation = num % hashSize;
      switch (probeMethod) {
         case LINEAR_PROBE:
-            hashLocation = num % hashSize;
             while (hashTable[hashLocation] != num) {
                 hashLocation++;
+                if (hashLocation >= hashSize) hashLocation = 0;
                 passes++;
             }
             passes++;
             break;
         case DOUBLE_HASH:
-            hashLocation = num % hashSize;
             while (hashTable[hashLocation] != num) {
                 int newLocation = (num % (hashSize - 2)) + 1;
                 hashLocation = (newLocation + hashLocation) % hashSize;
+                passes++;
             }
             passes++;
             break;
@@ -117,7 +117,7 @@ void fillTable(int table[]) {
  }
 
 
- //**************************************************************************
+//**************************************************************************
 // FUNCTION:  avgSearch
 // DESCRIP:   the average search it took to find each number
 // INPUT:     intArray - the integer array to search numbers from
@@ -127,10 +127,37 @@ void fillTable(int table[]) {
 // OUTPUT:    float - the average searches it took to find the integers
 // CALLS TO:  searchInt
 //**************************************************************************
- float avgSearch(int intArray[], int hashTable[], int hashSize, ProbeMethod probeMethod) {
+ int avgSearch(int intArray[], int hashTable[], int hashSize, ProbeMethod probeMethod) {
  	int searchesTook = 0;
- 	for (int i = 0; i < SOURCESIZE / 2; i += 2)
+ 	for (int i = 0; i < SOURCESIZE; i += 2)
         searchesTook += searchInt(hashTable, hashSize, hashTable[i], probeMethod);
 
- 	return searchesTook * 1.0 / (SOURCESIZE / 2);
+ 	return searchesTook;
+ }
+
+
+//**************************************************************************
+// FUNCTION:  knuthPrediction
+// DESCRIP:   calculates the Knuth predicted average search
+// INPUT:     probeMethod - the ProbeMethod enum
+//            hashSize - the size of the hash Table
+// OUTPUT:    float - the calculated average of searches necessary
+// CALLS TO:
+//**************************************************************************
+ float knuthPrediction (ProbeMethod probeMethod, int hashSize) {
+     double loadFactor = SOURCESIZE * 1.0 / hashSize;
+     switch (probeMethod) {
+        case LINEAR_PROBE:
+            return 1 * 1.0 / 2 * (1 + (1 / (1 - loadFactor)));
+            break;
+        case DOUBLE_HASH:
+            return (-log(1 - loadFactor)) / loadFactor;
+            break;
+        case CHAIN_HASH:
+            return 1 + (loadFactor / 2);
+            break;
+        default:
+            break;
+     }
+     return 1;
  }

@@ -32,7 +32,7 @@ int main() {
 
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray) {
-		for (int i = 0; i < hashSize; i++) 
+		for (int i = 0; i < hashSize; i++)
 			doubleHashArray[i] = 0;
     	doubleHash(doubleHashArray, hashSource, hashSize);
     }
@@ -45,8 +45,10 @@ int main() {
 	cout << chainedSearch;
 
 
-    //linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
-    //doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
+    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
+    doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
+
+    printOutResult(linearSearch, doubleSearch, chainedSearch, hashSize);
 
 	return 0;
 }

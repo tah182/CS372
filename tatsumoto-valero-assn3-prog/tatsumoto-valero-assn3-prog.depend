@@ -125,15 +125,16 @@
 	"Valero.h"
 	"Tatsumoto.h"
 
-1427530258 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.cpp
+1427593679 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.cpp
 	"common.h"
 	<iostream>
 	<stdlib.h>
 	<time.h>
+	<math.h>
 
-1427529415 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.h
+1427592355 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/common.h
 
-1427559194 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.cpp
+1427592860 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.cpp
 	"Valero.h"
 	"common.h"
 	"stddef.h"
@@ -141,15 +142,16 @@
 
 1427521532 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero.h
 
-1427529500 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.cpp
+1427592838 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.cpp
 	"Tatsumoto.h"
+	"common.h"
 
-1427526885 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.h
+1427592972 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto.h
 	<algorithm>
 	<stdlib.h>
 	<iostream>
 
-1427567985 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/ValeroTatsumoto-Assn3-Prog.cpp
+1427592951 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/ValeroTatsumoto-Assn3-Prog.cpp
 	<iostream>
 	"common.h"
 	"Valero.h"

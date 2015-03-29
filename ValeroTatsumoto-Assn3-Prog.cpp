@@ -17,19 +17,23 @@ using namespace std;
 //			avgSearch, printOutResult
 //-----------------------------------------------------------------------------
 int main() {
-//variables
+//variables-----------
 	chainNode** linkedChainHash;
 	int hashSource[SOURCESIZE];
 	int hashSize;
 	double chainedSearch,
 		   linearSearch,
 		   doubleSearch;
+//--------------------
 
+//display program introduction and get basic information from user,
+//		initialize the source array
     displayIntro();
 
 	fillTable(hashSource);
 	hashSize = getHashSize();
 
+//dynamically allocate an array of size specified by user for linear probing
 	int* linearHash = new (nothrow) int[hashSize];
 	if (linearHash) {
 		for(int i = 0; i < hashSize; i++)
@@ -39,6 +43,7 @@ int main() {
     else
     	cout << "Error- out of heap memory" << endl;
 
+//dynamically allocate an array of size specified by user for double hashing
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray) {
 		for (int i = 0; i < hashSize; i++)
@@ -48,6 +53,7 @@ int main() {
     else
     	cout << "Error- out of heap memory" << endl;
 
+//dynamically allocate array of pointers to store seperately chained hash values
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);
 	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);

@@ -7,6 +7,15 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+//FUNCTION: main
+//AUTHOR: Eric Valero
+//DESCRIPTION: Accesses functions in Valero.cpp, Tatsumoto.cpp, and common.cpp
+//				to control program flow
+//CALLS TO: displayIntro, fillTable, getHashSize, linearProbeHash,
+//			doubleHash, createChainedTable, fillChainTable, searchChainTable,
+//			avgSearch, printOutResult
+//-----------------------------------------------------------------------------
 int main() {
 //variables
 	chainNode** linkedChainHash;

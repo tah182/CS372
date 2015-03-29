@@ -1,5 +1,5 @@
-#include "Tatsumoto.h"
-#include "common.h"
+#include "tatsumotovalero-assn3-common.h"
+#include "tatsumoto-assn3-funcs.h"
 
 //**************************************************************************
 // IMPLEMENTED BY: Tah Tatsumoto
@@ -124,6 +124,8 @@ void doubleHash(int hashTable[], int intArray[], int hashSize) {
 // CALLS TO:  knuthPrediction
 //**************************************************************************
 void printOutResult(int linearProbeResult, int doubleHashResult, int chainHashResult, int hashSize) {
+    cout.setf(ios::fixed,ios::floatfield);
+    cout.precision(3);
     cout << endl << endl << SOURCESIZE << " items loaded into a " << hashSize << " element hash table." << endl;
     cout << "Load Factor = " << SOURCESIZE * 1.0 / hashSize << endl << endl;
     cout << "Result of searching for 2500 items:" << endl << endl;

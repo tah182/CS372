@@ -1,3 +1,10 @@
+#include <iostream>
+#include <stdlib.h>			//used for rand, srand functions
+#include <time.h>			//used to seed rand
+#include <math.h>
+
+using namespace std;
+
 //global constants
 const int SOURCESIZE = 5000;
 

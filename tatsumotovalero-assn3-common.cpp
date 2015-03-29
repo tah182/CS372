@@ -1,11 +1,9 @@
 //contains functions which must be available to all cpp files
 
-using namespace std;
-#include "common.h"
-#include <iostream>
-#include <stdlib.h>			//used for rand, srand functions
-#include <time.h>			//used to seed rand
-#include <math.h>
+#include "stddef.h"
+#include "tatsumotovalero-assn3-common.h"
+#include "tatsumoto-assn3-funcs.h"
+#include "valero-assn3-funcs.h"
 
 //implemented by Eric Valero.
 //tries to add a number to the source table, if it is unique

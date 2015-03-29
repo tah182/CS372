@@ -1,7 +1,3 @@
-#include <algorithm> // for std::find
-#include <stdlib.h>
-#include <iostream>
-using namespace std;
 
 // prototypes
 

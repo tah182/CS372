@@ -1,11 +1,7 @@
-#include <iostream>
-#include "common.h"
-#include "Valero.h"
-#include "Tatsumoto.h"
+#include "tatsumotovalero-assn3-common.h"
+#include "valero-assn3-funcs.h"
+#include "tatsumoto-assn3-funcs.h"
 
-//test data for push
-
-using namespace std;
 
 //-----------------------------------------------------------------------------
 //FUNCTION: main

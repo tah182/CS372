@@ -157,3 +157,30 @@
 	"Valero.h"
 	"Tatsumoto.h"
 
+1427603576 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/tatsumotovalero-assn3-common.cpp
+	"stddef.h"
+	"tatsumotovalero-assn3-common.h"
+	"tatsumoto-assn3-funcs.h"
+	"valero-assn3-funcs.h"
+
+1427603896 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/tatsumotovalero-assn3-common.h
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+
+1427603421 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/TatsumotoValero-Assn3-main.cpp
+	"tatsumotovalero-assn3-common.h"
+	"valero-assn3-funcs.h"
+	"tatsumoto-assn3-funcs.h"
+
+1427603679 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Valero-assn3-funcs.cpp
+	"valero-assn3-funcs.h"
+	"tatsumotovalero-assn3-common.h"
+
+1427603920 source:/Users/tah1/OneDrive/School/CS372Programs/GroupProject/Tatsumoto-assn3-funcs.cpp
+	"tatsumotovalero-assn3-common.h"
+	"tatsumoto-assn3-funcs.h"
+
+1427603933 /Users/tah1/OneDrive/School/CS372Programs/GroupProject/valero-assn3-funcs.h
+

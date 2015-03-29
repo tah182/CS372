@@ -1,9 +1,5 @@
-#include "Valero.h"
-#include "common.h"
-#include "stddef.h"
-#include <iostream>
-
-using namespace std;
+#include "valero-assn3-funcs.h"
+#include "tatsumotovalero-assn3-common.h"
 
 chainNode** createChainTable(int hashSize) {
 	int n = hashSize;

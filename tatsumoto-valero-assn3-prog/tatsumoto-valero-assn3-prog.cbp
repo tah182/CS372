@@ -32,13 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../Tatsumoto.cpp" />
-		<Unit filename="../Tatsumoto.h" />
-		<Unit filename="../Valero.cpp" />
-		<Unit filename="../Valero.h" />
-		<Unit filename="../ValeroTatsumoto-Assn3-Prog.cpp" />
-		<Unit filename="../common.cpp" />
-		<Unit filename="../common.h" />
+		<Unit filename="../Tatsumoto-assn3-funcs.cpp" />
+		<Unit filename="../Tatsumoto-assn3-funcs.h" />
+		<Unit filename="../TatsumotoValero-Assn3-main.cpp" />
+		<Unit filename="../Valero-assn3-funcs.cpp" />
+		<Unit filename="../Valero-assn3-funcs.h" />
+		<Unit filename="../tatsumotovalero-assn3-common.cpp" />
+		<Unit filename="../tatsumotovalero-assn3-common.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

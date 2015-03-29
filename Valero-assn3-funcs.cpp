@@ -1,11 +1,29 @@
-#include "valero-assn3-funcs.h"
-#include "tatsumotovalero-assn3-common.h"
+//--------------------------------------------------------------------------
+//CODE FILENAME:	Valero-assn3-funcs.cpp
+//DESIGNER:			Eric Valero
+//DESCRIPTION:		Creates separate chaining hash table, places hash values
+//						in table, searches for values,
+//CLASS&TERM:		CS372/Spring 8week2
+//FUNCTIONS:		createChainTable, putHash, fillChainedTable, 
+//						searchChainedTable
+//-------------------------------------------------------------------------- 
+#include "valero-assn3-funcs.h"					//allow access to prototypes and data structures in this file
+#include "tatsumotovalero-assn3-common.h"		//allow access to global constants, prototypes, data structures and funcs
 
+//--------------------------------------------------------------------------
+//FUNCTION: 	createChainTable
+//AUTHOR:		Eric Valero
+//DESCRIPTION:	creates a dynamically allocated array of pointers to structs
+//INPUT:
+//	Parameters:	hashSize- a user entered integer determining size of hash table
+//OUTPUT:
+//	Return Val:	chainedTable- a pointer to an array of pointers(hash table)
+//--------------------------------------------------------------------------
 chainNode** createChainTable(int hashSize) {
-	int n = hashSize;
-	chainNode** chainedTable = new chainNode*[n];
+	chainNode** chainedTable = new chainNode*[hashSize];	//allocate memory
 
-	for (int i = 0; i < n; i++) {
+	//initialize all nodes to contain pointers to NULL and keys of 0
+	for (int i = 0; i < hashSize; i++) {
 		chainedTable[i] = new chainNode;
 		chainedTable[i]->next = NULL;
 		chainedTable[i]->key = 0;
@@ -14,7 +32,16 @@ chainNode** createChainTable(int hashSize) {
 	return chainedTable;
 }
 
-//places a key in the hash table after collision resolution
+//---------------------------------------------------------------------------
+//FUNCTION:		putHash
+//AUTHOR:		Eric Valero
+//DESCRIPTION:	places a key in the hash table after collision resolution
+//INPUT:
+//	Parameters:	key- value to be added
+//				size- size of hash table
+//OUTPUT:
+//	Parameters:	hashTable[]- updated hash table
+//---------------------------------------------------------------------------
 void putHash(chainNode* hashTable[], int key, int size) {
 	chainNode* resolution;				//pointer to storage location
 	int hashedKey = key % size;			//initial attempt location
@@ -49,18 +76,30 @@ void putHash(chainNode* hashTable[], int key, int size) {
 			cout << "Error, not enough memory for chain allocation for key "
 			<< key << endl;
 		}
-
 	}
 
 	return;
 }
 
-//calls put hash while looping through source array to place all keys into table
+//-----------------------------------------------------------------------------
+//FUNCTION:		fillChainedTable
+//AUTHOR:		Eric Valero
+//DESCRIPTION:	calls put hash while looping through source array to place all 
+//					keys into table
+//INPUT:
+//	Parameters:	size- size of hash table
+//OUTPUT:
+//	Parameters: chainTable- the hash table
+//				sourceArr- used as input, is source of random numbers
+//CALLS TO:		putHash
+//-----------------------------------------------------------------------------
 void fillChainedTable(chainNode* hashTable[], int sourceArr[], int size){
 
 	int index = 0;
 	int key;
-
+	
+	//loop through source array, pulling random numbers and placing them
+	//	in hash table
 	while(index < SOURCESIZE) {
 		key = sourceArr[index];
 		putHash(hashTable, key, size);
@@ -69,31 +108,44 @@ void fillChainedTable(chainNode* hashTable[], int sourceArr[], int size){
 	return;
 }
 
-//searches every other value within the hash source table in the hash,
-//finds average number of steps to find value
+//-----------------------------------------------------------------------------
+//FUNCTION: 	searchChainedTable
+//AUTHOR:		Eric Valero	
+//DESCRIPTION:	searches every other value within the hash source table in the hash,
+//					tracks the number of items examined
+//INPUT:
+//	Parameters:	size- size of hash table
+//OUTPUT:
+//	Return Val: steps- number of items examined
+//	Parameters:	hashTable- used as input, the hash table
+//				sourceArr- used as input, the array of random numbers
+//------------------------------------------------------------------------------
 double searchChainedTable(chainNode* hashTable[], int sourceArr[], int size) {
 
-	int target;
-	int hashedKey;
-	chainNode* location;
-	int index = 0;
+	int target;									//search target
+	int hashedKey;								//hash location based off target
+	chainNode* location;						//a location within the hash table
+	int index = 0;				
 	double steps = 0.0;
-
+	
+	//step through source array
 	while(index < SOURCESIZE) {
-		target = sourceArr[index];
-		hashedKey = target % size;
-		location = hashTable[hashedKey];
-		steps++;
+		target = sourceArr[index];				//retrieve target from array
+		hashedKey = target % size;				//generate hash location
+		location = hashTable[hashedKey];		//look in that place for target
+		steps++;								//track one item examined
 
+		//if location doesn't contain target, step through chain
+		//until it does, incrementing step each time
 		if (location->key != target) {
 
 			while(location->key != target) {
 				location = location->next;
 				steps++;
 			}
-
 		}
-		index += 2;
+		index += BIGINCREMENT;								//progress by two to search for half of values
+												//	in the source array
 	}
 
 	return steps;

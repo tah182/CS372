@@ -1,12 +1,23 @@
-//contains functions which must be available to all cpp files
-
+//-----------------------------------------------------------------------------------
+//FILE NAME: tatsumotovalero-assn3-common.cpp
+//DESIGNERS: Eric Valero & Takashi Tatsumoto
+//DESCRIPTION: contains functions which must be available to all cpp files
+//CLASS&TERM: CS372/Spring 8wk2
+//-----------------------------------------------------------------------------------
 #include "stddef.h"
 #include "tatsumotovalero-assn3-common.h"
 #include "tatsumoto-assn3-funcs.h"
 #include "valero-assn3-funcs.h"
 
-//implemented by Eric Valero.
-//tries to add a number to the source table, if it is unique
+//-------------------------------------------------------------------------------
+//FUNCTION:		fillTable
+//AUTHOR:	 	Eric Valero.
+//DESCRIPTION:	Tries to add a number to the source table, if it is unique
+//OUTPUT:
+//	Parameters:	table- the completed source array
+//CALLS TO:		srand- seeds the rand function
+//				rand- generates a random int
+//-------------------------------------------------------------------------------
 void fillTable(int table[]) {
 	bool isUnique;									//used to track uniqueness of target number
 	int entries = 0;								//number of entries which have been added to table
@@ -17,7 +28,7 @@ void fillTable(int table[]) {
 	//run until array is full
 	while(entries <= SOURCESIZE) {
 
-		target = (rand() % 30000) + 1;					//get rid of this constant
+		target = (rand() % TOOBIG) + 1;				//ensure all numbers x are 0 < x < 30000
 		isUnique = true;
 
 		//determine if number is unique

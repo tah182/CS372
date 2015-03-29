@@ -1,6 +1,14 @@
-#include "tatsumotovalero-assn3-common.h"
-#include "valero-assn3-funcs.h"
-#include "tatsumoto-assn3-funcs.h"
+//-----------------------------------------------------------------------------
+//CODE FILENAME: 	TatsumotoValero-Assn3-main
+//DESCRIPTION:		Analyzes and demonstrates separate chaining, double hashing
+//						and linear probing as hash collision resolution methods
+//CLASS&TERM:		CS372/Spring 8wk2
+//DESIGNER:			Eric Valero & Takashi Tatsumoto
+//FUNCTIONS:		main
+//-----------------------------------------------------------------------------	
+#include "tatsumotovalero-assn3-common.h"			//allow access to global constants, prototypes, and enum types
+#include "valero-assn3-funcs.h"						//allow access to functions & data structures created by Eric Valero
+#include "tatsumoto-assn3-funcs.h"					//allow access to functions & data structures created by Takashi Tatsumoto
 
 
 //-----------------------------------------------------------------------------
@@ -34,7 +42,7 @@ int main() {
 	if (linearHash) {
 		for(int i = 0; i < hashSize; i++)
 			linearHash[i] = 0;
-    	linearProbeHash(linearHash, hashSource, hashSize);
+    	linearProbeHash(linearHash, hashSource, hashSize);						//run hash algorithm against array
     }
     else
     	cout << "Error- out of heap memory" << endl;
@@ -44,20 +52,21 @@ int main() {
     if (doubleHashArray) {
 		for (int i = 0; i < hashSize; i++)
 			doubleHashArray[i] = 0;
-    	doubleHash(doubleHashArray, hashSource, hashSize);
+    	doubleHash(doubleHashArray, hashSource, hashSize);						//run hash algorithm against array
     }
     else
     	cout << "Error- out of heap memory" << endl;
 
 //dynamically allocate array of pointers to store seperately chained hash values
 	linkedChainHash = createChainTable(hashSize);
-	fillChainedTable(linkedChainHash, hashSource, hashSize);
-	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-
-
+	fillChainedTable(linkedChainHash, hashSource, hashSize);					//run hash algorithm against array of pointers
+	
+//this block of code returns the number of items examined in searching each table
+	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);	
     linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
     doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
 
+//display results to user
     printOutResult(linearSearch, doubleSearch, chainedSearch, hashSize);
 
 	return 0;

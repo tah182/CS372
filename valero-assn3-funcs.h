@@ -1,6 +1,11 @@
+//---------------------------------------------------------------------------
+//FILE NAME: valero-assn3-funcs.h
+//DESIGNER:	Eric Valero
+//DESCRIPTION: This file provides all function prototypes and
+//				data types to Valero.cpp
+//CLASS&TERM:	CS372/Spring 8wk2
+//---------------------------------------------------------------------------
 
-//implemented by Eric Valero
-//this file provides all function headers to Valero.cpp
 
 //structures
 struct chainNode{

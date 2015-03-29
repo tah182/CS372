@@ -100,7 +100,6 @@ void doubleHash(int hashTable[], int intArray[], int hashSize) {
             int newLocation = (intArray[i] % (hashSize - 2)) + 1;
             hashLocation = (newLocation + hashLocation) % hashSize;
         }
-
         hashTable[hashLocation] = intArray[i];
 //        cout << "Int " << i << ": Putting " << intArray[i] << " into [" << hashLocation << "]" << endl;
     }

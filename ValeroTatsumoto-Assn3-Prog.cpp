@@ -27,16 +27,19 @@ int main() {
 	hashSize = getHashSize();
 
 	int* linearHash = new (nothrow) int[hashSize];
-	if (linearHash)
+	if (linearHash) {
+		for(int i = 0; i < hashSize; i++)
+			linearHash[i] = 0;
     	linearProbeHash(linearHash, hashSource, hashSize);
+    }
     else
     	cout << "Error- out of heap memory" << endl;
 
     int* doubleHashArray = new (nothrow) int[hashSize];
     if (doubleHashArray) {
-
+		for (int i = 0; i < hashSize; i++) 
+			doubleHashArray[i] = 0;
     	doubleHash(doubleHashArray, hashSource, hashSize);
-    	cout << "skipped double";
     }
     else
     	cout << "Error- out of heap memory" << endl;
@@ -47,7 +50,7 @@ int main() {
 	cout << chainedSearch;
 
 
-    linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
+    //linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
     //doubleSearch = avgSearch(hashSource, doubleHashArray, hashSize, DOUBLE_HASH);
 
     // RUns if you

@@ -129,7 +129,8 @@ void printOutResult(int linearProbeResult, int doubleHashResult, int chainHashRe
     cout <<             " items examined per search)" << endl;
     cout << "\t\t" << "  vs Knuth predicted avg = " << knuthPrediction(DOUBLE_HASH, hashSize) << " items examined per search." << endl << endl;
     cout << "\tChained Hashing" << endl;
-    cout << "\t\t" << chainHashResult << " items examined (avg = " << doubleHashResult * 1.0 / (SOURCESIZE / 2);
+    cout << "\t\t" << chainHashResult << " items examined (avg = " << chainHashResult
+ * 1.0 / (SOURCESIZE / 2);
     cout <<             " items examined per search)" << endl;
     cout << "\t\t" << "  vs Knuth predicted avg = " << knuthPrediction(CHAIN_HASH, hashSize) << " items examined per search." << endl;
 }

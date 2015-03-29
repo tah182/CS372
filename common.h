@@ -21,4 +21,4 @@ enum ProbeMethod {
 
 float knuthPrediction (ProbeMethod probeMethod, int hashSize);
 int searchInt(int hashTable[], int hashSize, int num, ProbeMethod probeMethod);
-float avgSearch(int intArray[], int hashTable[], int hashSize, ProbeMethod probeMethod);
+int avgSearch(int intArray[], int hashTable[], int hashSize, ProbeMethod probeMethod);

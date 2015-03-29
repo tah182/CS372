@@ -39,6 +39,7 @@ void fillTable(int table[]) {
 }
 
 //**************************************************************************
+// IMPLEMENTED BY: EricValero
 // FUNCTION:  getHashSize
 // DESCRIP:   Asks the user for hash size
 // INPUT:     None
@@ -64,6 +65,7 @@ void fillTable(int table[]) {
  }
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  displayIntro
 // DESCRIP:   Displays the application introduction message
 // INPUT:     None
@@ -81,6 +83,7 @@ void fillTable(int table[]) {
     return;
  }
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  searchInt
 // DESCRIP:   Searches the hash table and calculates how many passes it made to find the number
 // INPUT:     hashTable - the hash Table array to search in
@@ -118,6 +121,7 @@ void fillTable(int table[]) {
 
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  avgSearch
 // DESCRIP:   the average search it took to find each number
 // INPUT:     intArray - the integer array to search numbers from
@@ -137,6 +141,7 @@ void fillTable(int table[]) {
 
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  knuthPrediction
 // DESCRIP:   calculates the Knuth predicted average search
 // INPUT:     probeMethod - the ProbeMethod enum

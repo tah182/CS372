@@ -2,6 +2,7 @@
 #include "common.h"
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  randInt
 // DESCRIP:   creates a random integer between 1 and 30,000
 // INPUT:     None
@@ -13,6 +14,8 @@ int makeRandInt() {
 }
 
 //**************************************************************************
+// -------------------      DEPRECATED          ----------------------------
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  allocArray
 // DESCRIP:   Allocates array. Exits if cannot allocate.
 // INPUT:     arrSize - the size of the array to allocate
@@ -29,6 +32,7 @@ void allocArray(int hashTable[], int arrSize) {
  }
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // ------------------         DEPRECATED        ----------------------------
 // FUNCTION:  makeRandArray
 // DESCRIP:   Dynamically allocates 5000 integers with random numbers
@@ -61,6 +65,7 @@ int* makeRandArray() {
 */
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:    linearProbeHash
 // DESCRIP:     Creates a Linear Hash Table based on array passed in
 // INPUT:       hashTable - the reference to the hashTable to create
@@ -86,6 +91,7 @@ void linearProbeHash(int hashTable[], int intArray[], int hashSize) {
 }
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  doubleHash
 // INPUT:       hashTable - the reference to the hashTable to create
 //              intArray - the integer array to put into hash table
@@ -108,6 +114,7 @@ void doubleHash(int hashTable[], int intArray[], int hashSize) {
 
 
 //**************************************************************************
+// IMPLEMENTED BY: Tah Tatsumoto
 // FUNCTION:  printOutResult
 // INPUT:       linearProbeResult - the result of the linear probe
 //              doubleHashResult - the result of the double hash

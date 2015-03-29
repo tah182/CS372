@@ -42,7 +42,6 @@ int main() {
 	linkedChainHash = createChainTable(hashSize);
 	fillChainedTable(linkedChainHash, hashSource, hashSize);
 	chainedSearch = searchChainedTable(linkedChainHash, hashSource, hashSize);
-	cout << chainedSearch;
 
 
     linearSearch = avgSearch(hashSource, linearHash, hashSize, LINEAR_PROBE);
